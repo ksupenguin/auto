@@ -25,10 +25,10 @@ public class CardRequestTest {
     }
 
     private void enterName(String name) {
-        form.$(By.xpath("input[@name = 'name']")).sendKeys(name);
+        form.$(By.xpath("//input[@name = 'name']")).sendKeys(name);
     }
 
     private void enterPhone(String phone) {
-        form.$(By.xpath("input[@name = 'phone']")).sendKeys(phone);
+        form.$(By.xpath("//input[@name = 'phone']")).sendKeys(phone);
     }
 }
