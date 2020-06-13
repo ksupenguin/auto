@@ -13,7 +13,7 @@ public class CardRequestTest {
 
     @Test
     public void shouldBeRequested() {
-        open("http://localhost:9999");
+        open("http://localhost:7777");
         enterName("Ксения Лаврова-Глинка");
         enterPhone("+79001234455");
         form.$(".checkbox__box").click();
