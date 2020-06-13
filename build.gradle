@@ -5,8 +5,14 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
+sourceCompatibility = 11
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
 }
 
 dependencies {
