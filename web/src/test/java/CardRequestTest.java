@@ -1,5 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.matchesText;
 import static com.codeborne.selenide.Condition.visible;
@@ -24,10 +25,10 @@ public class CardRequestTest {
     }
 
     private void enterName(String name) {
-        form.$("input[@name = 'name']").sendKeys(name);
+        form.$(By.xpath("input[@name = 'name']")).sendKeys(name);
     }
 
     private void enterPhone(String phone) {
-        form.$("input[@name = 'phone']").sendKeys(phone);
+        form.$(By.xpath("input[@name = 'phone']")).sendKeys(phone);
     }
 }
