@@ -26,6 +26,11 @@ public class CardDeliveryTest {
         return date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
+    private static int getDays() {
+        int date = LocalDate.now().getDayOfMonth();
+        return date + 3;
+    }
+
     @BeforeEach
     public void openUrl() {
         open("http://localhost:7778");
@@ -35,6 +40,22 @@ public class CardDeliveryTest {
     public void shouldDelivery() {
         enterCity(VALID_CITY);
         enterDate(generateDate());
+        enterName(VALID_NAME);
+        enterPhone(VALID_PHONE);
+        checkCheckbox();
+        clickButton();
+
+        notification.waitUntil(visible, 15000);
+        notification.shouldHave(text("Встреча успешно забронирована на"));
+    }
+
+    @Test
+    public void shouldDeliveryPopup() {
+        enterCity("Мос");
+        $(".popup__content").$x("//span[@class = 'menu-item__control' and text() = 'Москва']").click();
+        form.$(".icon_name_calendar").click();
+        form.$x("//td[contains(@class,'day') and text() = '" + getDays() + "']");
+
         enterName(VALID_NAME);
         enterPhone(VALID_PHONE);
         checkCheckbox();
