@@ -12,6 +12,7 @@ install:
   # запускаем SUT (& означает, что в фоновом режиме - не блокируем терминал для запуска тестов)
   - java -jar api/artifacts/app-mbank.jar &
   - java -jar web/artifacts/app-order.jar -port=7777 &
+  - java -jar selenide/artifacts/app-card-delivery.jar -port=7778 &
 
 build_script:
   - chmod +x gradlew
