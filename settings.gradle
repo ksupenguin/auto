@@ -1,4 +1,5 @@
 rootProject.name = 'auto'
 include 'api'
 include 'web'
+include 'selenide'
 
